@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
@@ -6,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaptopController;
 use App\Http\Controllers\AccessoryController;
 use App\Http\Controllers\SearchController;
+
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::resource('accessories', AccessoryController::class);
 Route::get('home',  [AccessoryController::class, 'home'])->name('accessories.home');
@@ -24,3 +26,9 @@ Route::get('/', function () {
 });
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
