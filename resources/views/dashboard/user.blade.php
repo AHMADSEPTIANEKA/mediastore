@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="relative group">
-                <a href="{{ route('phones.index') }}"
+                <a href=""
                     class="text-gray-700 hover:text-indigo-600 transition px-4 py-2 rounded-md">Handphone</a>
                 <div
                     class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform scale-95 group-hover:scale-100 overflow-hidden">
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="relative group">
-                <a href="{{ route('laptops.index') }}"
+                <a href=""
                     class="text-gray-700 hover:text-indigo-600 transition px-4 py-2 rounded-md">Laptop</a>
                 <div
                     class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform scale-95 group-hover:scale-100 overflow-hidden">
@@ -103,11 +103,11 @@
             <img src="{{ asset('storage/pictures/jl.png') }}" class="w-full object-contain" alt="Slide 1">
         </div>
             <div class="carousel-item">
-                <img src="storage/pictures/jp.png" class="w-full h-full object-cover" alt="Slide 2">
-            </div>
+                <img src="{{ asset('storage/pictures/jp.png') }}" class="w-full object-contain" alt="Slide 1">
+        </div>
             <div class="carousel-item">
-                <img src="storage/pictures/jo.png" class="w-full h-full object-cover" alt="Slide 3">
-            </div>
+                <img src="{{ asset('storage/pictures/jo.png') }}" class="w-full object-contain" alt="Slide 1">
+        </div>
         </div>
     </div>
     <!-- Product List -->

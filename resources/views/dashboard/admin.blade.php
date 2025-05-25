@@ -103,11 +103,11 @@
             <img src="{{ asset('storage/pictures/jl.png') }}" class="w-full object-contain" alt="Slide 1">
         </div>
             <div class="carousel-item">
-                <img src="storage/pictures/jp.png" class="w-full h-full object-cover" alt="Slide 2">
-            </div>
+                <img src="{{ asset('storage/pictures/jp.png') }}" class="w-full object-contain" alt="Slide 1">
+        </div>
             <div class="carousel-item">
-                <img src="storage/pictures/jo.png" class="w-full h-full object-cover" alt="Slide 3">
-            </div>
+                <img src="{{ asset('storage/pictures/jo.png') }}" class="w-full object-contain" alt="Slide 1">
+        </div>
         </div>
     </div>
     <!-- Product List -->

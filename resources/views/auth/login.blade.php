@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
     @vite('resources/css/app.css')
 </head>
@@ -15,7 +15,7 @@
 
         <!-- Bagian Kanan (Gambar) -->
         <div class="w-1/2 bg-gray-700 flex items-center justify-center relative">
-            <img src="image/bola1.jpg" alt="User Login" class="w-full h-full object-cover">
+            <img src="image/bola1.jpg" alt="User Login" class="w-full h-full object-cover" />
             <div
                 class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col items-center justify-center text-center p-4">
                 <h3 class="text-2xl font-bold text-orange-400 drop-shadow-md">Selamat Datang!</h3>
@@ -43,7 +43,7 @@
                     </span>
                     <input type="email" name="email" id="email" required
                         class="w-full pl-10 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500 text-white"
-                        placeholder="Email">
+                        placeholder="Email" />
                 </div>
 
                 <!-- Input Password -->
@@ -53,19 +53,26 @@
                     </span>
                     <input type="password" name="password" id="password" required
                         class="w-full pl-10 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500 text-white"
-                        placeholder="Password">
+                        placeholder="Password" />
                 </div>
 
                 <button type="submit"
                     class="w-full text-center bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-lg font-bold transition duration-300">
                     Login
                 </button>
-                <div
-                    class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold text-center transition duration-300">
-                    <a href="{{ route('dashboard') }}">Kembali</a>
-                </div>
             </form>
 
+            <!-- Tombol Register -->
+            <a href="{{ route('register') }}"
+                class="mt-4 block w-full text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold transition duration-300">
+                Register
+            </a>
+
+            <!-- Tombol Kembali -->
+            <div
+                class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold text-center transition duration-300">
+                <a href="{{ route('dashboard') }}">Kembali</a>
+            </div>
         </div>
     </div>
 </body>

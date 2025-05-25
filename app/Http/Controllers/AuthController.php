@@ -9,24 +9,35 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+
+    public function index()
+{
+    // Misalnya redirect ke login atau dashboard
+    return redirect()->route('login');
+}
+
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
     public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+{
+    $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('admin.index')->with('success', 'Login Berhasil');
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'user') {
+            return redirect()->route('user.dashboard');
         }
-
-        return back()->withErrors(['email' => 'Email atau password salah']);
     }
+
+    return back()->withErrors(['email' => 'Email atau password salah.']);
+}
+
+
 
     public function showRegisterForm()
     {
@@ -53,9 +64,10 @@ class AuthController extends Controller
     }
 
 
-    public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('welcome');
-    }
+    public function logout(Request $request)
+{
+    Auth::logout();
+    return redirect('/login');
+}
+
 }

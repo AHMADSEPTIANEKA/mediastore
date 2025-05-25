@@ -72,7 +72,7 @@
             <input type="text" name="query" id="search" placeholder="Search..." class="px-4 py-2 rounded-full border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300 ease-in-out shadow-sm">
             <button type="submit" class="ml-2 bg-indigo-500 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300">🔍</button>
         </form>
-        <a href="#" class="text-gray-700 text-xl transform hover:scale-125 transition duration-300">🛒</a>
+        <a href="{{ route('cart.index') }}" class="text-gray-700 text-xl transform hover:scale-125 transition duration-300">🛒</a>
         <a href="#" class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-6 py-2 rounded-full hover:opacity-90 transform hover:scale-110 transition duration-300 shadow-lg">Login</a>
     </div>
 </nav>   
@@ -91,7 +91,10 @@
                     <p class="text-indigo-600 font-bold text-xl">Rp {{ number_format((int) str_replace('.', '', $laptop->price), 0, ',', '.') }}</p>
                 </div>
                 <div class="mt-4 space-y-2">
-                    <a href="{{ route('laptops.show', $laptop->id) }}" class="block text-center bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Buy Now</a>
+<a href="{{ route('payment', ['product_id' => $laptop->id, 'type' => 'laptop']) }}" 
+   class="block text-center bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 mt-2">
+   Buy Now
+</a>
                     <a href="{{ route('laptops.show', $laptop->id) }}" class="block text-center bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300">Learn More</a>
                 </div>
             </div>
